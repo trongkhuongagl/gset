@@ -1,0 +1,12 @@
+/* fontsize
+--------------------------------------------------------------------- */
+@function get_vw($size, $viewport:768) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+@mixin fs($fontsize) {
+  font-size: ($fontsize / 10) + rem;
+}
+@mixin fsvw($fontsize:10){
+  font-size: get_vw($fontsize);
+}

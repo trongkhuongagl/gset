@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*------------------------------------------- page.css */
+.page__mv__news::after {
+	background-image: url('../img/news/img_sp.jpg');
+}
+@media screen and (min-width: 768px) {
+	.page__mv__news::after {
+		background-image: url('../img/news/img_pc.jpg');
+	}
+}

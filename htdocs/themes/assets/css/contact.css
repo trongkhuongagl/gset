@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*------------------------------------------- contact.css */
+.page__mv__contact::after {
+    background-image: url('../img/entry/img_sp.jpg');
+}
+@media screen and (min-width: 768px) {
+    .page__mv__contact::after {
+        background-image: url('../img/entry/img_pc.jpg');
+    }
+}
+
+.p__contact__body .form__btn__box {
+	margin-top: 40px;
+}

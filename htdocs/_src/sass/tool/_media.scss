@@ -1,0 +1,18 @@
+// PC用
+@mixin pc() {
+  @media all and (min-width: $portable) {
+    @content;
+  }
+}
+// モバイル共通
+@mixin mobile() {
+  @media screen and (max-width: $portableMax) {
+    @content;
+  }
+}
+// 印刷用
+@mixin print() {
+  @media print {
+    @content;
+  }
+}

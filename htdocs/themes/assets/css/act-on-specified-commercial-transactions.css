@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*------------------------------------------- */
+
+.p-lesson-content__text+.p-lesson-content__note {
+    margin-top: 0.5rem;
+}
+.p-lesson-content__note {
+    color: #8a929f;
+    font-size: 1.1rem;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+@media screen and (min-width: 992px){
+.p-lesson-content__text+.p-lesson-content__note {
+    margin-top: 1rem;
+}
+.p-lesson-content__note {
+    font-size: 1.4rem;
+}
+}
+
+@media screen and (min-width: 768px){
+    .page__mv__Act.on.Specified.Commercial.Transactions::after {
+    background-image: url(../img/company/img_pc.jpg);
+}
+}
+
+.page__mv__Act.on.Specified.Commercial.Transactions::after {
+    background-image: url(../img/company/img_sp.jpg);
+}
+
+.c-link {
+    border-bottom: 1px solid currentColor;
+    color: #008ebd;
+    -webkit-transition: border-color .3s ease;
+    transition: border-color .3s ease;
+    display: inline-block;
+}
+.c-link:hover {
+    border-color: transparent;
+}
+a.tel{
+    display: inline-block;
+}
+a.mail{
+    display: inline-block;
+}
+.page__mv__catch__sub {
+    text-transform: none!important;
+}

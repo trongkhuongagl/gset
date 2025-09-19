@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*------------------------------------------- studio.css */
+.page__mv__studio::after {
+    background-image: url('../img/studio/img_sp.jpg');
+}
+
+.studio__table,
+.studio__map {
+    margin-bottom: 40px;
+}
+.studio__map {
+    width: 100%;
+    height: 300px;
+}
+.map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.p__ttl__1 br {
+  display: block;
+}
+@media screen and (min-width: 992px) {
+    .studio__content__2 .studio__table {
+        margin-bottom: 60px;
+    }
+    .studio__map {
+        height: 430px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .p__ttl__1 br {
+      display: none;
+    }
+    .page__mv__studio::after {
+        background-image: url('../img/studio/img_pc.jpg');
+    }
+}

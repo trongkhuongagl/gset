@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*------------------------------------------- page.css */
+.page__mv__privacy-policy::after {
+	background-image: url('../img/privacy/img01_sp.jpg');
+}
+@media screen and (min-width: 768px) {
+	.page__mv__privacy-policy::after {
+		background-image: url('../img/privacy/img01_pc.jpg');
+	}
+}
+
+.studio__table ul li {
+  padding-left:1em;
+	text-indent:-1em;
+}
+
+.studio__table .link {
+  display: inline;
+}

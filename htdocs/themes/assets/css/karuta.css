@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/*------------------------------------------- karuta.css */
+.page__mv__karuta::after {
+  background-image: url('../img/karuta/img_pc.jpg');
+}
+.karuta__content h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 30px;
+}
+.karuta__content h2 + p {
+  text-align: center;
+  margin: 0 0 60px;
+}
+.karuta_index dl {
+  display: flex;
+  justify-content: space-between;
+  background: #f2f2f2;
+  width: 90%;
+  margin: 0 auto 5px;
+}
+.karuta_index dl dt {
+  color: #fff;
+  background: #081d56;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 130px;
+  font-size: 30px;
+  font-family: Arial;
+}
+.karuta_index dl dd {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  margin: 0;
+}
+.karuta_index dl dd .ex01 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 0 10px;
+}
+.karuta_index dl dd .ex01 .audio {
+  margin-right: 10px;
+}
+.karuta_index dl dd .ex01 .audio button {
+  text-indent: -9999px;
+  border: none;
+  background: url(https://gset.co.jp/themes/assets/img/common/icon-start.png) no-repeat center top / cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: .3s;
+}
+.karuta_index dl dd .ex01 .audio button:hover {
+  opacity: .8;
+}
+.karuta_index dl dd .ex01 .audio button.active {
+  background-image: url(https://gset.co.jp/themes/assets/img/common/icon-stop.png);
+}
+.karuta_index dl dd .ex02 {
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 260px;
+}
+
+@media screen and (max-width: 992px) {
+  .karuta_index dl {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page__mv__karuta::after {
+    background-image: url('../img/karuta/img_sp.jpg');
+  }
+  .content__area {
+    padding: 0 3vw;
+  }
+  .karuta__content h2 {
+    font-size: 5vw;
+    margin: 0 0 3vw;
+  }
+  .karuta__content h2 + p {
+    font-size: 2.4vw;
+    text-align: left;
+    line-height: 4.4vw;
+    margin: 0 0 7vw;
+  }
+  .karuta_index dl dt {
+    min-width: 13vw;
+    font-size: 5vw;
+  }
+  .karuta_index dl dd {
+    flex-wrap: wrap;
+    position: relative;
+    padding: 1vw;
+  }
+  .karuta_index dl dd .ex01,
+  .karuta_index dl dd .ex02 {
+    width: 100%;
+  }
+  .karuta_index dl dd .ex01 {
+    padding: 0;
+  }
+  .karuta_index dl dd .ex01 p {
+    font-size: 2.4vw;
+  }
+  .karuta_index dl dd .ex01 .audio button {
+    width: 9vw;
+    height: 9vw;
+    position: absolute;
+    right: 3vw;
+    top: 2vw;
+  }
+  .karuta_index dl dd .ex01 p {
+    font-weight: 700;
+    margin: 0 0 1.2vw;
+  }
+  .karuta_index dl dd .ex02 {
+    padding: .4vw 2vw .6vw;
+    min-width: auto;
+    margin: 0 0 0 2vw;
+    width: 63vw;
+    font-size: 2.4vw;
+  }
+}
