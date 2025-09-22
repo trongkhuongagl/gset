@@ -1,7 +1,7 @@
 $(function() {
 $('.slider').slick({
   dots: true,
-  autoplay: true,
+  // autoplay: true,
   autoplaySpeed: 1000,
   infinite: true,
   speed: 3000,
@@ -78,9 +78,9 @@ setTimeout(function () {
 
 
   const rootSlider1 = new Swiper('.js-topRootSlider', {
-    autoplay: {
-      delay: 2000,
-    },
+    // autoplay: {
+    //   delay: 2000,
+    // },
     loop: true,
     speed: 500,
     spaceBetween: 25,

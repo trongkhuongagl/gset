@@ -1,11 +1,77 @@
 /*---------------------------------------------------------------------------*\
   $CUSTOM
 \*---------------------------------------------------------------------------*/
+// Common
+@function vw_pc($px, $base: 1904) {
+  @return ($px / $base) * 100vw;
+}
+@function vw_sp($px, $base: 750) {
+  @return ($px / $base) * 100vw;
+}
+.c-bg-linear01 {
+  background-image: linear-gradient(315deg, #004FFF 0%, #000000 40%, #000000 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.c-arrow01 {
+  &__item {
+    width: clamp(0px, vw_pc(200), 200px);
+    height: clamp(0px, vw_pc(200), 200px);
+    border-style: solid;
+    border-color: #004fff;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 2;
+    @media screen and (max-width: 767px){
+      width: vw_sp(120);
+      height: vw_sp(120);
+    }
+  }
+  &__img {
+    width: clamp(0px, vw_pc(25), 25px);
+    position: absolute;
+    top: calc(100% + #{vw_pc(30)});
+    right: vw_pc(-25);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media screen and (max-width: 767px){
+      width: vw_sp(15);
+      top: calc(100% + #{vw_sp(15)});
+      right: vw_sp(-15);
+    }
+  }
+  &__tr {
+    border-width: clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px) 0 0;
+    top: clamp(0px, vw_pc(50), 50px);
+    right: clamp(0px, vw_pc(50), 50px);
+    @media screen and (max-width: 767px){
+      border-width: vw_sp(15) vw_sp(15) 0 0;
+      top: vw_sp(40);
+      right: vw_sp(10);
+    }
+  }
+  &__bl {
+    border-width: 0 0 clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px);
+    bottom: vw_sp(40);
+    left: clamp(0px, vw_pc(110), 110px);
+    @media screen and (max-width: 767px){
+      border-width: 0 0 vw_sp(15) vw_sp(15);
+      bottom: vw_sp(40);
+      left: vw_sp(10);
+    }
+  }
+}
+
 // .header
 .header {
-  z-index: 2;
+  z-index: 3;
   @media screen and (max-width: 767px){
-    height: 130px;
+    height: vw_sp(130);
+    background-color: #000;
   }
   &__top {
     .h__logo {
@@ -33,7 +99,7 @@
       @media screen and (max-width: 767px){
         margin-top: 0;
         img {
-          width: calc(125/750 * 100vw);
+          width: vw_sp(125);
         }
       }
     }
@@ -62,6 +128,8 @@
   }
   @media screen and (max-width: 767px){
     height: 100%;
+    padding-right: vw_sp(40);
+    padding-left: vw_sp(30);
   }
 }
 
@@ -147,17 +215,50 @@
 // .h__btn
 .h__btn {
   &__sp {
-    width: calc(295/750 * 100vw);
+    width: vw_sp(295);
     height: 100%;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    right: 125px;
+    font-size: vw_sp(28);
+    font-weight: 700;
     background-color: #ffe000;
     color: #071f61;
-    font-weight: 700;
-    font-size: 28px;
+    right: vw_sp(126);
+  }
+}
+
+// .hamburger menu SP
+.hamburger {
+  &__bth {
+    width: vw_sp(126);
+    height: vw_sp(130);
+  }
+  &__inner {
+    width: vw_sp(48);
+    height: vw_sp(42);
+  }
+  &__icon {
+    height: vw_sp(2);
+    &:nth-child(2) {
+      width: vw_sp(24);
+      top: vw_sp(20);
+    }
+    &:last-child {
+      width: vw_sp(36);
+    }
+  }
+  &__active {
+    .hamburger__icon:first-child {
+      width: vw_sp(48);
+      left: vw_sp(-4);
+    }
+    .hamburger__icon:last-child {
+      width: vw_sp(48);
+      left: vw_sp(-4);
+      bottom: vw_sp(6);
+    }
   }
 }
 
@@ -166,5 +267,334 @@
   margin-top: calc(var(--heightHeader) * -1);
   @media screen and (max-width: 767px){
     margin-top: 0;
+  }
+}
+
+// main
+main {
+  @media screen and (max-width: 767px){
+    margin-top: var(--heightHeader);
+  }
+}
+
+// .p-topRoot
+.p-topRoot {
+  position: relative;
+  @media screen and (max-width: 767px){
+    padding-top: vw_sp(163);
+    padding-bottom: vw_sp(163);
+  }
+  &__ttl {
+    background-color: #004fff;
+    color: #000;
+    font-size: clamp(0px, vw_pc(40), 40px);
+    span {
+      color: #fff;
+    }
+    @media screen and (max-width: 767px){
+      font-size: vw_sp(40);
+    }
+  }
+  &__subttl {
+    @media screen and (max-width: 767px){
+      line-height: 1.1;
+      margin-top: vw_sp(15);
+      margin-bottom: vw_sp(120);
+      &--small {
+        font-size: vw_sp(50);
+      }
+    }
+  }
+  &__tabList {
+    background-color: #000;
+  }
+  &__tabItem {
+    &.active {
+      color: #000;
+    }
+  }
+  &__slider {
+    .swiper-slide-txt-item {
+      background-color: #004fff;
+      color: #000;
+      font-size: clamp(0px, vw_pc(30), 30px);
+      padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
+      @media screen and (max-width: 767px){
+        line-height: 1.7;
+        font-size: vw_sp(32);
+        padding: vw_sp(6) vw_sp(40);
+      }
+      span {
+        margin-left: -1px;
+        &:before {
+          content: "";
+          top: unset;
+          bottom: 2px;
+          width: 100%;
+          height: clamp(0px, vw_pc(10), 10px);
+          background-color: #fff;
+          z-index: -1;
+          @media screen and (max-width: 767px){
+            height: vw_sp(10);
+          }
+        }
+      }
+      &.emphasis {
+        padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
+        @media screen and (max-width: 767px){
+          padding: vw_sp(6) vw_sp(40);
+        }
+      }
+    }
+    .swiper-container {
+      padding-bottom: clamp(0px, vw_pc(80), 80px);
+      @media screen and (max-width: 767px){
+        padding-bottom: vw_sp(100);
+      }
+    }
+  }
+  &__sliderNav {
+    width: 100%;
+    background-color: #061e61;
+    padding-top: clamp(0px, vw_pc(8), 8px);
+    padding-bottom: clamp(0px, vw_pc(8), 8px);
+    z-index: -1;
+    @media screen and (max-width: 767px){
+      padding-top: vw_sp(8);
+      padding-bottom: vw_sp(8);
+    }
+    &-wrap {
+      position: relative;
+      width: vw_pc(1130);
+      margin: 0 auto;
+      @media screen and (max-width: 767px){
+        width: vw_sp(670);
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: transparent;
+      bottom: vw_pc(-2);
+      @media screen and (max-width: 767px){
+        bottom: vw_sp(-3);
+      }
+    }
+  }
+}
+
+// .t__about
+.t__about {
+  padding-bottom: clamp(0px, vw_pc(180), 180px);
+  background-image: linear-gradient(315deg, #004FFF 0%, #000000 40%, #000000 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @media screen and (max-width: 767px) {
+    padding-top: vw_sp(100);
+    padding-bottom: vw_sp(120);
+  }
+  &::before {
+    display: none;
+  }
+  &__img {
+    margin-right: clamp(0px, vw_pc(120), 120px);
+  }
+  .content__area--title {
+    max-width: none;
+    width: clamp(0px, vw_pc(1390), 1390px);
+    margin: 0 auto;
+    padding: 0;
+    .section__ttl {
+      margin: 0 0 clamp(0px, vw_pc(100), 100px) 0;
+    }
+    .t_ttl_1 {
+      margin: 0;
+      color: #004fff;
+      @media screen and (max-width: 767px) {
+        font-size: vw_sp(60);
+      }
+    }
+  }
+  .content__area--desc {
+    max-width: none;
+    width: clamp(0px, vw_pc(1440), 1440px);
+    margin: clamp(0px, vw_pc(85), 85px) auto 0 auto;
+    padding: 0 clamp(0px, vw_pc(30), 30px) 0 0;
+    .section__ttl {
+      margin: 0;
+      justify-content: flex-end;
+      @media screen and (max-width: 767px) {
+        font-size: vw_sp(28);
+      }
+    }
+  }
+}
+
+// .t__effect
+.t__effect {
+  position: relative;
+  .slider {
+    .slick-prev, .slick-next {
+      z-index: 2;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .slider {
+      .p-audio {
+        padding: vw_sp(30);
+      }
+      .p-audio__image {
+        height: 14rem;
+        min-width: 11rem;
+        width: 11rem;
+        img {
+          width: 100%;
+        }
+      }
+      .p-audio__item {
+        padding: vw_sp(30) vw_sp(30) 0 vw_sp(70);
+      }
+    }
+  }
+  .effect_ttl_2 {
+    font-size: 2rem;
+    @media screen and (max-width: 767px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// .t__introduction
+.t__introduction {
+  margin-bottom: 0;
+}
+
+// .t__voice
+.t__voice {
+  position: relative;
+  padding-top: clamp(0px, vw_pc(150), 150px);
+  padding-bottom: clamp(0px, vw_pc(210), 210px);
+  margin-bottom: 0;
+  @media screen and (min-width: 768px) and (max-width: 1300px) {
+    .c-arrow01__tr {
+      right: clamp(0px, vw_pc(25), 25px);
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1500px) {
+    .c-arrow01__bl {
+      left: clamp(0px, vw_pc(10), 10px);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding-top: vw_sp(120);
+    padding-bottom: vw_sp(120);
+    background-image: linear-gradient(275deg, #004FFF 0%, #000000 95%, #000000 100%);
+  }
+  .c-arrow01__bl {
+    @media screen and (max-width: 767px) {
+      left: 0;
+    }
+  }
+  .section__ttl,
+  .t_ttl_1 {
+    color: #fff;
+  }
+  .sup {
+    color: #fff;
+  }
+  .content__area {
+    @media screen and (max-width: 767px) {
+      padding-left: vw_sp(38);
+      padding-right: vw_sp(38);
+    }
+  }
+  &__list {
+    ul {
+      margin: 0;
+      gap: clamp(0px, vw_pc(65), 65px) clamp(0px, vw_pc(60), 60px);
+      li {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      @media screen and (max-width: 767px) {
+        gap: vw_sp(40);
+      }
+    }
+  }
+  .voice__box {
+    &::before,
+    &::after {
+      display: none;
+    }
+    border: none;
+    background-image: linear-gradient(315deg, #004FFF 0%, #000000 70%, #000000 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding-left: clamp(0px, vw_pc(60), 60px);
+    padding-right: clamp(0px, vw_pc(60), 60px);
+    min-height: clamp(0px, vw_pc(480), 480px);
+    @media screen and (max-width: 767px) {
+      min-height: auto;
+      padding: vw_sp(70);
+    }
+  }
+  .voice__arrow {
+    width: clamp(0px, vw_pc(124), 124px);
+    height: clamp(0px, vw_pc(124), 124px);
+    border-style: solid;
+    border-color: #004fff;
+    position: absolute;
+    &--tr {
+      border-width: clamp(0px, vw_pc(11), 11px) clamp(0px, vw_pc(11), 11px) 0 0;
+      top: vw_pc(-9);
+      right: vw_pc(-9);
+    }
+    &--bl {
+      border-width: 0 0 clamp(0px, vw_pc(11), 11px) clamp(0px, vw_pc(11), 11px);
+      bottom: vw_pc(-9);
+      left: vw_pc(-9);
+    }
+    @media screen and (max-width: 767px) {
+      width: vw_sp(124);
+      height: vw_sp(124);
+      &--tr {
+      border-width: vw_sp(11) vw_sp(11) 0 0;
+      top: vw_sp(-9);
+      right: vw_sp(-9);
+    }
+    &--bl {
+      border-width: 0 0 vw_sp(11) vw_sp(11);
+      bottom: vw_sp(-9);
+      left: vw_sp(-9);
+    }
+    }
+  }
+  .voice__name {
+    span {
+      display: block;
+      font-size: 2.2rem;
+      @media screen and (max-width: 767px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .voice__comment {
+    position: static;
+    background: none;
+    padding: 0;
+    margin-bottom: clamp(0px, vw_pc(20), 20px);
+    &::after {
+      display: none;
+    }
+  }
+}
+
+// .footer
+.footer {
+  small {
+    border: none;
+    color: #fff;
   }
 }
