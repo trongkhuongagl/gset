@@ -520,7 +520,11 @@ main {
     color: #fff;
   }
   .t_ttl_1 {
-    margin-left: clamp(0px, vw_pc(60), 60px);
+    font-size: clamp(0px, vw_pc(60), 60px);
+    margin-left: clamp(0px, vw_pc(55), 55px);
+    margin-right: clamp(0px, vw_pc(20), 20px);
+    letter-spacing: 0.2em;
+    display: inline-flex;
     @media screen and (min-width: 768px) and (max-width: 991px){
       margin-left: 0;
     }
@@ -529,10 +533,14 @@ main {
       letter-spacing: 0.1em;
       line-height: 1.6;
       margin-left: vw_sp(28);
+      margin-right: 0;
       margin-bottom: 0;
     }
   }
   .section__ttl {
+    p {
+      font-size: clamp(0px, vw_pc(20), 20px);
+    }
     @media screen and (max-width: 767px) {
       margin-bottom: vw_sp(80);
       p {
