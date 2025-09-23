@@ -9,10 +9,13 @@
   @return ($px / $base) * 100vw;
 }
 .c-bg-linear01 {
-  background-image: linear-gradient(315deg, #004FFF 0%, #000000 40%, #000000 100%);
+  background-image: linear-gradient(315deg, #004FFF 0%, #000000 35%, #000000 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  @media screen and (max-width: 767px){
+    background-image: linear-gradient(286deg, #004FFF 0%, #000 36%, #000 100%);
+  }
 }
 .c-arrow01 {
   &__item {
@@ -33,6 +36,9 @@
     position: absolute;
     top: calc(100% + #{vw_pc(30)});
     right: vw_pc(-25);
+    @media screen and (min-width: 2560px){
+      right: -25px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -231,13 +237,22 @@
 
 // .hamburger menu SP
 .hamburger {
+  &__active {
+    .hamburger__content {
+      background: #000;  
+    }
+  }
   &__bth {
     width: vw_sp(126);
     height: vw_sp(130);
+    background: #000;
   }
   &__inner {
     width: vw_sp(48);
     height: vw_sp(42);
+  }
+  &__nav__item {
+    border-color: #fff;
   }
   &__icon {
     height: vw_sp(2);
@@ -390,14 +405,19 @@ main {
   background-position: center center;
   background-size: cover;
   @media screen and (max-width: 767px) {
+    background-image: linear-gradient(293deg, #004FFF 0%, #000 39%, #000 100%);
     padding-top: vw_sp(100);
     padding-bottom: vw_sp(120);
+    margin-bottom: 0;
   }
   &::before {
     display: none;
   }
   &__img {
     margin-right: clamp(0px, vw_pc(120), 120px);
+    .visibility--s {
+      width: 100%;
+    }
   }
   .content__area--title {
     max-width: none;
@@ -406,6 +426,9 @@ main {
     padding: 0;
     .section__ttl {
       margin: 0 0 clamp(0px, vw_pc(100), 100px) 0;
+      @media screen and (max-width: 767px) {
+        margin-left: vw_sp(-42);
+      }
     }
     .t_ttl_1 {
       margin: 0;
@@ -458,6 +481,11 @@ main {
   }
   .effect_ttl_2 {
     font-size: 2rem;
+    @media screen and (min-width: 768px) {
+      br.sp_br {
+        display: none;
+      }
+    }
     @media screen and (max-width: 767px) {
       font-size: 1.5rem;
     }
@@ -486,7 +514,7 @@ main {
     }
   }
   @media screen and (max-width: 767px) {
-    padding-top: vw_sp(120);
+    padding-top: vw_sp(142);
     padding-bottom: vw_sp(120);
     background-image: linear-gradient(275deg, #004FFF 0%, #000000 95%, #000000 100%);
   }
@@ -499,8 +527,27 @@ main {
   .t_ttl_1 {
     color: #fff;
   }
-  .sup {
-    color: #fff;
+  .t_ttl_1 {
+    margin-left: clamp(0px, vw_pc(60), 60px);
+    @media screen and (min-width: 768px) and (max-width: 991px){
+      margin-left: 0;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: vw_sp(62);
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+      margin-left: vw_sp(28);
+      margin-bottom: 0;
+    }
+  }
+  .section__ttl {
+    @media screen and (max-width: 767px) {
+      margin-bottom: vw_sp(80);
+      p {
+        font-size: vw_sp(27);
+        margin-left: vw_sp(36);
+      }
+    }
   }
   .content__area {
     @media screen and (max-width: 767px) {
@@ -539,6 +586,16 @@ main {
       min-height: auto;
       padding: vw_sp(70);
     }
+
+    .sup {
+      color: #fff;
+      font-size: clamp(0px, vw_pc(20), 20px);
+      margin-top: clamp(0px, vw_pc(39), 39px);
+      @media screen and (max-width: 767px) {
+        font-size: vw_sp(25);
+        margin-top: vw_sp(39);
+      }
+    }
   }
   .voice__arrow {
     width: clamp(0px, vw_pc(124), 124px);
@@ -571,22 +628,46 @@ main {
     }
     }
   }
+  .voice__date {
+    font-size: clamp(0px, vw_pc(32), 32px);
+    @media screen and (max-width: 767px) {
+      font-size: vw_sp(32);
+    }
+  }
   .voice__name {
+    font-size: clamp(0px, vw_pc(22), 22px);
+    line-height: 1.6;
+    margin-bottom: clamp(0px, vw_pc(30), 30px);
     span {
       display: block;
-      font-size: 2.2rem;
-      @media screen and (max-width: 767px) {
-        font-size: 1.8rem;
+      font-size: clamp(0px, vw_pc(22), 22px);
+    }
+    @media screen and (max-width: 767px) {
+      font-size: vw_sp(26);
+      margin-bottom: vw_sp(30);
+      span {
+        font-size: vw_sp(26);
       }
     }
   }
   .voice__comment {
+    font-size: clamp(0px, vw_pc(27), 27px);
     position: static;
     background: none;
     padding: 0;
-    margin-bottom: clamp(0px, vw_pc(20), 20px);
+    margin-bottom: clamp(0px, vw_pc(10), 10px);
+    @media screen and (max-width: 767px) {
+      font-size: vw_sp(34);
+      margin-bottom: vw_sp(10);
+    }
     &::after {
       display: none;
+    }
+  }
+  .voice__text {
+    font-size: clamp(0px, vw_pc(20), 20px);
+    @media screen and (max-width: 767px) {
+      font-size: vw_sp(25);
     }
   }
 }
