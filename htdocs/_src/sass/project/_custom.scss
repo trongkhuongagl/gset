@@ -38,6 +38,7 @@
     right: vw_pc(-25);
     @media screen and (min-width: 2560px){
       right: -25px;
+      top: calc(100% + 30px);
     }
     img {
       width: 100%;
@@ -237,11 +238,6 @@
 
 // .hamburger menu SP
 .hamburger {
-  &__active {
-    .hamburger__content {
-      background: #000;  
-    }
-  }
   &__bth {
     width: vw_sp(126);
     height: vw_sp(130);
@@ -321,7 +317,7 @@ main {
     }
   }
   &__tabList {
-    background-color: #000;
+    background-color: transparent;
   }
   &__tabItem {
     &.active {
@@ -480,14 +476,10 @@ main {
     }
   }
   .effect_ttl_2 {
-    font-size: 2rem;
     @media screen and (min-width: 768px) {
       br.sp_br {
         display: none;
       }
-    }
-    @media screen and (max-width: 767px) {
-      font-size: 1.5rem;
     }
   }
 }
