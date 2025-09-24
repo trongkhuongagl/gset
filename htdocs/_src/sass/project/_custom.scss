@@ -116,6 +116,11 @@
 // .fixed__header
 .fixed__header {
   max-width: 1780px;
+  @media screen and (min-width: 768px) and (max-width: 1399px) {
+    .h__logo {
+      width: 10vw;
+    }
+  }
 }
 
 // .h__inner
@@ -143,6 +148,7 @@
 // .h__btn
 .h__btn {
   margin-left: 52px;
+  align-items: center;
   @media screen and (min-width: 768px) and (max-width: 1439px){
     margin-left: 10px;
   }
@@ -171,7 +177,8 @@
       }
       @media screen and (min-width: 1200px) and (max-width: 1439px){
         min-width: 190px;
-        height: 60px;
+        height: 45px;
+        font-size: 1.3rem;
         flex-direction: column;
         span {
           display: block;
@@ -297,6 +304,7 @@ main {
     padding-bottom: vw_sp(163);
   }
   &__ttl {
+    width: clamp(650 * 750 / 1366 * 1px, 650 / 1366 * 100vw, 650px);
     background-color: #004fff;
     color: #000;
     font-size: clamp(0px, vw_pc(40), 40px);
@@ -325,6 +333,7 @@ main {
     background-color: transparent;
   }
   &__tabItem {
+    letter-spacing: 0.1em;
     &.active {
       color: #000;
     }
