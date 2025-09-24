@@ -179,7 +179,8 @@
       }
       @media screen and (min-width: 1440px) and (max-width: 1900px){
         min-width: 200px;
-        height: 60px;
+        height: 45px;
+        font-size: 1.3rem;
       }
       &::before {
         display: none;
@@ -299,14 +300,18 @@ main {
     background-color: #004fff;
     color: #000;
     font-size: clamp(0px, vw_pc(40), 40px);
+    font-weight: 700;
+    letter-spacing: 0.15em;
     span {
       color: #fff;
     }
     @media screen and (max-width: 767px){
       font-size: vw_sp(40);
+      letter-spacing: 0.1em;
     }
   }
   &__subttl {
+    font-weight: 700;
     @media screen and (max-width: 767px){
       line-height: 1.1;
       margin-top: vw_sp(15);
