@@ -537,7 +537,15 @@ main {
 
 // .t__media__img
 .t__media {
+  .t_ttl_1 {
+    .sp_br {
+      @media screen and (min-width: 751px){
+        display: none;
+      }
+    }
+  }
   @media screen and (max-width: 750px){
+    margin-top: vw_sp(115);
     &__img {
       img {
         width: 100%;
@@ -602,6 +610,15 @@ main {
       }
     }
   }
+}
+
+// p-topTraining
+.p-topTraining {
+  @media screen and (max-width: 750px) {
+    &__wrap {
+      padding-bottom: vw_sp(155);
+    }
+  }  
 }
 
 // .t__effect
@@ -669,8 +686,14 @@ main {
   }
 }
 @media screen and (max-width: 751px){
-  .t__skill__box:last-child .fx-col-40-s {
-    order: unset;
+  .t__skill__box:last-child {
+    margin-top: vw_sp(60);
+    ul {
+      flex-direction: column-reverse;
+    }
+    .fx-col-40-s {
+      order: unset;
+    }
   }
 }
 
