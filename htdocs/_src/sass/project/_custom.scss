@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  @media screen and (max-width: 750px){
+  @include mobile() {
     background-image: linear-gradient(286deg, #004FFF 0%, #000 36%, #000 100%);
   }
 }
@@ -26,7 +26,7 @@
     position: absolute;
     box-sizing: border-box;
     z-index: 2;
-    @media screen and (max-width: 750px){
+    @include mobile() {
       width: vw_sp(120);
       height: vw_sp(120);
     }
@@ -45,7 +45,7 @@
       height: 100%;
       object-fit: cover;
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       width: vw_sp(15);
       top: calc(100% + #{vw_sp(15)});
       right: vw_sp(-15);
@@ -55,7 +55,7 @@
     border-width: clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px) 0 0;
     top: clamp(0px, vw_pc(50), 50px);
     right: clamp(0px, vw_pc(50), 50px);
-    @media screen and (max-width: 750px){
+    @include mobile() {
       border-width: vw_sp(15) vw_sp(15) 0 0;
       top: vw_sp(40);
       right: vw_sp(10);
@@ -65,7 +65,7 @@
     border-width: 0 0 clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px);
     bottom: vw_sp(40);
     left: clamp(0px, vw_pc(110), 110px);
-    @media screen and (max-width: 750px){
+    @include mobile() {
       border-width: 0 0 vw_sp(15) vw_sp(15);
       bottom: vw_sp(40);
       left: vw_sp(10);
@@ -76,7 +76,7 @@
 // .header
 .header {
   z-index: 3;
-  @media screen and (max-width: 750px){
+  @include mobile() {
     height: vw_sp(130);
     background-color: #000;
     position: fixed;
@@ -84,7 +84,7 @@
     left: 0;
     width: 100%;
   }
-  @media screen and (min-width: 751px){
+  @include pc() {
     position: relative;
     background-color: transparent;
   }
@@ -111,7 +111,7 @@
           width: 92px;
         }
       }
-      @media screen and (max-width: 750px){
+      @include mobile() {
         margin-top: 0;
         img {
           width: vw_sp(125);
@@ -129,7 +129,7 @@
       width: 10vw;
     }
   }
-  @media screen and (min-width: 751px){
+  @include pc() {
     display: block !important;
     position: fixed;
     top: 30px;
@@ -189,7 +189,7 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  @media screen and (max-width: 750px){
+  @include mobile() {
     height: 100%;
     padding-right: vw_sp(40);
     padding-left: vw_sp(30);
@@ -222,7 +222,7 @@
       font-weight: 700;
       line-height: 1.5;
       border-radius: 0;
-      @media screen and (min-width: 751px){
+      @include pc() {
         font-size: 1.2rem;
       }
       @media screen and (min-width: 751px) and (max-width: 1199px){
@@ -256,7 +256,7 @@
       }
       &__1 {
         border-width: 3px;
-        @media screen and (min-width: 751px){
+        @include pc() {
           display: none;
         }
       }
@@ -264,7 +264,7 @@
         background-color: #ffe100;
         color: #081f62;
         span {
-          @media screen and (min-width: 751px){
+          @include pc() {
             display: none;
           }
           @media screen and (min-width: 1200px){
@@ -278,7 +278,7 @@
 
 // .h__gnav
 .h__gnav {
-  @media screen and (min-width: 751px){
+  @include pc() {
     display: flex;
     align-items: center;
     .new_size_header {
@@ -362,10 +362,10 @@
 // .mv.j__mv02
 .mv.j__mv02 {
   margin-top: calc(var(--heightHeader) * -1);
-  @media screen and (max-width: 750px){
+  @include mobile() {
     margin-top: 0;
   }
-  @media screen and (min-width: 751px){
+  @include pc() {
     position: relative;
     padding: 0;
     background: none;
@@ -375,16 +375,16 @@
 
 // main
 main {
-  @media screen and (max-width: 750px){
+  @include mobile() {
     margin-top: var(--heightHeader);
   }
-  @media screen and (min-width: 751px){
+  @include pc() {
     margin-top: 0;
   }
 }
 
 // Common
-@media screen and (min-width: 751px){
+@include pc() {
   .hidden--s {
     display: none !important;
   }
@@ -424,7 +424,7 @@ main {
 // .p-topRoot
 .p-topRoot {
   position: relative;
-  @media screen and (max-width: 750px){
+  @include mobile() {
     padding-top: vw_sp(163);
     padding-bottom: vw_sp(163);
   }
@@ -439,7 +439,7 @@ main {
     span {
       color: #fff;
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       width: vw_sp(683);
       font-size: vw_sp(40);
       letter-spacing: 0.1em;
@@ -451,7 +451,7 @@ main {
     &--small {
       letter-spacing: 0.1em;
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       line-height: 1.1;
       margin-top: vw_sp(15);
       margin-bottom: vw_sp(120);
@@ -475,7 +475,7 @@ main {
       color: #000;
       font-size: clamp(0px, vw_pc(30), 30px);
       padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
-      @media screen and (max-width: 750px){
+      @include mobile() {
         line-height: 1.7;
         font-size: vw_sp(32);
         padding: vw_sp(6) vw_sp(40);
@@ -490,21 +490,21 @@ main {
           height: clamp(0px, vw_pc(10), 10px);
           background-color: #fff;
           z-index: -1;
-          @media screen and (max-width: 750px){
+          @include mobile() {
             height: vw_sp(10);
           }
         }
       }
       &.emphasis {
         padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
-        @media screen and (max-width: 750px){
+        @include mobile() {
           padding: vw_sp(6) vw_sp(40);
         }
       }
     }
     .swiper-container {
       padding-bottom: clamp(0px, vw_pc(80), 80px);
-      @media screen and (max-width: 750px){
+      @include mobile() {
         padding-bottom: vw_sp(100);
       }
     }
@@ -515,7 +515,7 @@ main {
     padding-top: clamp(0px, vw_pc(8), 8px);
     padding-bottom: clamp(0px, vw_pc(8), 8px);
     z-index: -1;
-    @media screen and (max-width: 750px){
+    @include mobile() {
       padding-top: vw_sp(8);
       padding-bottom: vw_sp(8);
     }
@@ -523,7 +523,7 @@ main {
       position: relative;
       width: vw_pc(1130);
       margin: 0 auto;
-      @media screen and (max-width: 750px){
+      @include mobile() {
         width: vw_sp(670);
       }
     }
@@ -531,7 +531,7 @@ main {
     .swiper-button-prev {
       background-color: transparent;
       bottom: vw_pc(-2);
-      @media screen and (max-width: 750px){
+      @include mobile() {
         bottom: vw_sp(-3);
       }
     }
@@ -542,12 +542,12 @@ main {
 .t__media {
   .t_ttl_1 {
     .sp_br {
-      @media screen and (min-width: 751px){
+      @include pc() {
         display: none;
       }
     }
   }
-  @media screen and (max-width: 750px){
+  @include mobile() {
     margin-top: vw_sp(115);
     &__img {
       img {
@@ -566,7 +566,7 @@ main {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  @media screen and (max-width: 750px){
+  @include mobile() {
     background-image: linear-gradient(293deg, #004FFF 0%, #000 39%, #000 100%);
     padding-top: vw_sp(100);
     padding-bottom: vw_sp(120);
@@ -588,14 +588,14 @@ main {
     padding: 0;
     .section__ttl {
       margin: 0 0 clamp(0px, vw_pc(100), 100px) 0;
-      @media screen and (max-width: 750px){
+      @include mobile() {
         margin-left: vw_sp(-42);
       }
     }
     .t_ttl_1 {
       margin: 0;
       color: #004fff;
-      @media screen and (max-width: 750px){
+      @include mobile() {
         font-size: vw_sp(60);
       }
     }
@@ -608,7 +608,7 @@ main {
     .section__ttl {
       margin: 0;
       justify-content: flex-end;
-      @media screen and (max-width: 750px){
+      @include mobile() {
         font-size: vw_sp(28);
       }
     }
@@ -660,7 +660,7 @@ main {
     }
   }
   .effect_ttl_2 {
-    @media screen and (min-width: 751px){
+    @include pc() {
       br.sp_br {
         display: none;
       }
@@ -671,11 +671,11 @@ main {
 // .t__skill
 .t__skill {
   margin-bottom: clamp(0px, vw_pc(60), 60px);
-  @media screen and (max-width: 750px){
+  @include mobile() {
     margin-bottom: vw_sp(80);
   }
 }
-@media screen and (min-width: 751px){
+@include pc() {
   .t__skill__box .fx-col-60-s {
     flex-basis: 59%;
     max-width: 59%;
@@ -703,7 +703,7 @@ main {
 // .t__introduction
 .t__introduction {
   margin-bottom: 0;
-  @media screen and (min-width: 751px){
+  @include pc() {
     .introduction__comment {
       display: block;
       margin-bottom: 0;
@@ -730,13 +730,13 @@ main {
       left: clamp(0px, vw_pc(10), 10px);
     }
   }
-  @media screen and (max-width: 750px){
+  @include mobile() {
     padding-top: vw_sp(150);
     padding-bottom: vw_sp(120);
     background-image: linear-gradient(275deg, #004FFF 0%, #000000 95%, #000000 100%);
   }
   .c-arrow01__bl {
-    @media screen and (max-width: 750px){
+    @include mobile() {
       left: 0;
     }
   }
@@ -753,7 +753,7 @@ main {
     @media screen and (min-width: 751px) and (max-width: 991px){
       margin-left: 0;
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       font-size: vw_sp(62);
       letter-spacing: 0.1em;
       line-height: 1.6;
@@ -766,7 +766,7 @@ main {
     p {
       font-size: clamp(0px, vw_pc(20), 20px);
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       margin-bottom: vw_sp(80);
       p {
         font-size: vw_sp(27);
@@ -775,7 +775,7 @@ main {
     }
   }
   .content__area {
-    @media screen and (max-width: 750px){
+    @include mobile() {
       padding-left: vw_sp(40);
       padding-right: vw_sp(40);
     }
@@ -790,14 +790,14 @@ main {
       li {
         margin: 0 !important;
         padding: 0 !important;
-        @media screen and (min-width: 751px){
+        @include pc() {
           max-width: 49%;
         }
       }
-      @media screen and (max-width: 750px){
+      @include mobile() {
         gap: vw_sp(40);
       }
-      @media screen and (min-width: 751px){
+      @include pc() {
         justify-content: space-between;
       }
     }
@@ -816,11 +816,11 @@ main {
     padding-left: clamp(0px, vw_pc(60), 60px);
     padding-right: clamp(0px, vw_pc(60), 60px);
     min-height: clamp(0px, vw_pc(480), 480px);
-    @media screen and (max-width: 750px){
+    @include mobile() {
       min-height: auto;
       padding: vw_sp(70);
     }
-    @media screen and (min-width: 751px){
+    @include pc() {
       height: 100%;
     }
 
@@ -828,7 +828,7 @@ main {
       color: #fff;
       font-size: clamp(0px, vw_pc(20), 20px);
       margin-top: clamp(0px, vw_pc(39), 39px);
-      @media screen and (max-width: 750px){
+      @include mobile() {
         font-size: vw_sp(25);
         margin-top: vw_sp(39);
       }
@@ -850,7 +850,7 @@ main {
       bottom: vw_pc(-9);
       left: vw_pc(-9);
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       width: vw_sp(124);
       height: vw_sp(124);
       &--tr {
@@ -867,7 +867,7 @@ main {
   }
   .voice__date {
     font-size: clamp(0px, vw_pc(32), 32px);
-    @media screen and (max-width: 750px){
+    @include mobile() {
       font-size: vw_sp(32);
     }
   }
@@ -879,7 +879,7 @@ main {
       display: block;
       font-size: clamp(0px, vw_pc(22), 22px);
     }
-    @media screen and (max-width: 750px){
+    @include mobile() {
       font-size: vw_sp(26);
       margin-bottom: vw_sp(30);
       span {
@@ -893,7 +893,7 @@ main {
     background: none;
     padding: 0;
     margin-bottom: clamp(0px, vw_pc(10), 10px);
-    @media screen and (max-width: 750px){
+    @include mobile() {
       font-size: vw_sp(34);
       margin-bottom: vw_sp(10);
     }
@@ -903,7 +903,7 @@ main {
   }
   .voice__text {
     font-size: clamp(0px, vw_pc(20), 20px);
-    @media screen and (max-width: 750px){
+    @include mobile() {
       font-size: vw_sp(25);
     }
   }
@@ -911,7 +911,7 @@ main {
 
 // .footer
 .footer {
-  @media screen and (min-width: 751px){
+  @include pc() {
     padding-top: 60px;
     position: relative;
     &__inner {
@@ -946,5 +946,140 @@ main {
   small {
     border: none;
     color: #fff;
+  }
+}
+.t_ttl_1 {
+  @extend %text-sp-t01;
+}
+.t_ttl_2 {
+  @extend %text-sp-t02;
+}
+.p-topAudio {
+  .p-topAudio__txt {
+    @extend %text-sp;
+  }
+}
+.t__media {
+  p.ttl__animated, .t__media__box > p {
+    @extend %text-sp;
+  }
+}
+.t__skill {
+  .t__skill__txt {
+    @extend %text-sp;
+  }
+}
+.t__effect {
+  h2.effect_ttl {
+    @extend %text-sp-t02;
+  }
+  h3.effect_ttl_2 {
+    @include mobile() {
+      font-size: vw_sp(32);
+    }
+  }
+}
+.t__faq {
+  p.ttl__animated {
+    @extend %text-sp;
+  }
+  .faq__txt {
+    @include mobile() {
+      padding-left: $spvw * 80;
+    }
+    + .faq__txt {
+      @include mobile() {
+        margin-top: $spvw * 20;
+      }
+    }
+    &.faq_q {
+      @extend %text-sp;
+      @include mobile() {
+        padding-right: $spvw * 40;
+        min-height: $spvw * 60;
+      }
+    }
+    &.faq_a {
+      @extend %text-sp;
+    }
+    span {
+      @include mobile() {
+        margin-right: $spvw * 20;
+        min-width: $spvw * 60;
+        min-height: $spvw * 60;
+        max-width: $spvw * 60;
+      }
+    }
+    .plus {
+      @include mobile() {
+        width: $spvw * 30;
+        height: $spvw * 30;
+      }
+      &::before {
+        @include mobile() {
+          width: $spvw * 30;
+          height: $spvw * 2;
+          top: $spvw * 14;
+        }
+      }
+      &::after {
+        @include mobile() {
+          width: $spvw * 2;
+          height: $spvw * 30;
+          left: $spvw * 14;
+        }
+      }
+    }
+  }
+}
+.t__introduction {
+  p.ttl__animated {
+    @extend %text-sp;
+  }
+  .introduction {
+    &__birthplace {
+      @include mobile() {
+        font-size: vw_sp(28);
+      }
+    }
+    &__img {
+      img {
+        @include mobile() {
+          width: 100%;
+        }
+      }
+    }
+    &__name {
+      @extend %text-sp;
+      span {
+        @include mobile() {
+          font-size: vw_sp(48);
+        }
+      }
+    }
+  }
+}
+.response__content {
+  .response__ttl {
+    @extend %text-sp-t02;    
+  }
+  p {
+    @extend %text-sp;
+  }
+}
+%text-sp-t01 {
+  @include mobile() {
+    font-size: vw_sp(60);
+  }
+}
+%text-sp-t02 {
+  @include mobile() {
+    font-size: vw_sp(52);
+  }
+}
+%text-sp {
+  @include mobile() {
+    // font-size: vw_sp(32);
+    font-size: 3.73333vw;
   }
 }
