@@ -1,6 +1,6 @@
 /* fontsize
 --------------------------------------------------------------------- */
-@function get_vw($size, $viewport:768) {
+@function get_vw($size, $viewport:750) {
   $rate: 100 / $viewport;
   @return $rate * $size * 1vw;
 }

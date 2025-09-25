@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 750px){
     background-image: linear-gradient(286deg, #004FFF 0%, #000 36%, #000 100%);
   }
 }
@@ -26,7 +26,7 @@
     position: absolute;
     box-sizing: border-box;
     z-index: 2;
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
       width: vw_sp(120);
       height: vw_sp(120);
     }
@@ -45,7 +45,7 @@
       height: 100%;
       object-fit: cover;
     }
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
       width: vw_sp(15);
       top: calc(100% + #{vw_sp(15)});
       right: vw_sp(-15);
@@ -55,7 +55,7 @@
     border-width: clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px) 0 0;
     top: clamp(0px, vw_pc(50), 50px);
     right: clamp(0px, vw_pc(50), 50px);
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
       border-width: vw_sp(15) vw_sp(15) 0 0;
       top: vw_sp(40);
       right: vw_sp(10);
@@ -65,7 +65,7 @@
     border-width: 0 0 clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px);
     bottom: vw_sp(40);
     left: clamp(0px, vw_pc(110), 110px);
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
       border-width: 0 0 vw_sp(15) vw_sp(15);
       bottom: vw_sp(40);
       left: vw_sp(10);
@@ -76,9 +76,17 @@
 // .header
 .header {
   z-index: 3;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 750px){
     height: vw_sp(130);
     background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  @media screen and (min-width: 751px){
+    position: relative;
+    background-color: transparent;
   }
   &__top {
     .h__logo {
@@ -91,7 +99,7 @@
         min-width: auto;
         width: 158px;
       }
-      @media screen and (min-width: 768px) and (max-width: 1439px){
+      @media screen and (min-width: 751px) and (max-width: 1439px){
         margin-top: 0;
         img {
           width: 55px;
@@ -103,7 +111,7 @@
           width: 92px;
         }
       }
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 750px){
         margin-top: 0;
         img {
           width: vw_sp(125);
@@ -116,9 +124,52 @@
 // .fixed__header
 .fixed__header {
   max-width: 1780px;
-  @media screen and (min-width: 768px) and (max-width: 1399px) {
+  @media screen and (min-width: 751px) and (max-width: 1399px) {
     .h__logo {
       width: 10vw;
+    }
+  }
+  @media screen and (min-width: 751px){
+    display: block !important;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    max-width: 1680px;
+    width: calc(100% - 40px);
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity .4s;
+    -o-transition: opacity .4s;
+    transition: opacity .4s;
+    border-radius: 5px;
+    &.fixed__header__active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .h__inner {
+      background: #fff;
+      padding: 10px;
+      height: auto;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      border-radius: 5px;
+    }
+    .h__gnav__item {
+      color: #0c0c0c;
+    }
+    .h__menu__inner {
+      display: flex;
+    }
+    .btn__3 {
+      display: none;
     }
   }
 }
@@ -130,7 +181,7 @@
   padding-left: 33px;
   background: transparent;
   justify-content: space-between;
-  @media screen and (min-width: 768px) and (max-width: 1439px){
+  @media screen and (min-width: 751px) and (max-width: 1439px){
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -138,7 +189,7 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 750px){
     height: 100%;
     padding-right: vw_sp(40);
     padding-left: vw_sp(30);
@@ -149,7 +200,7 @@
 .h__btn {
   margin-left: 52px;
   align-items: center;
-  @media screen and (min-width: 768px) and (max-width: 1439px){
+  @media screen and (min-width: 751px) and (max-width: 1439px){
     margin-left: 10px;
   }
   @media screen and (min-width: 1440px) and (max-width: 1900px){
@@ -161,7 +212,7 @@
 .h__menu {
   &__inner {
     padding: 20px 0;
-    @media screen and (min-width: 768px) and (max-width: 1439px){
+    @media screen and (min-width: 751px) and (max-width: 1439px){
       padding: 10px 0;
     }
     @media screen and (min-width: 1440px) and (max-width: 1900px){}
@@ -171,7 +222,10 @@
       font-weight: 700;
       line-height: 1.5;
       border-radius: 0;
-      @media screen and (min-width: 768px) and (max-width: 1199px){
+      @media screen and (min-width: 751px){
+        font-size: 1.2rem;
+      }
+      @media screen and (min-width: 751px) and (max-width: 1199px){
         min-width: 135px;
         height: 40px;
       }
@@ -194,7 +248,7 @@
       }
       &+.btn {
         margin-left: 15px;
-        @media screen and (min-width: 768px) and (max-width: 1439px){
+        @media screen and (min-width: 751px) and (max-width: 1439px){
           margin-left: 10px;
         }
         @media screen and (min-width: 1440px) and (max-width: 1900px){
@@ -202,10 +256,18 @@
       }
       &__1 {
         border-width: 3px;
+        @media screen and (min-width: 751px){
+          display: none;
+        }
       }
       &__2 {
         background-color: #ffe100;
         color: #081f62;
+        span {
+          @media screen and (min-width: 751px){
+            display: none;
+          }
+        }
       }
     }
   }
@@ -213,12 +275,25 @@
 
 // .h__gnav
 .h__gnav {
+  @media screen and (min-width: 751px){
+    display: flex;
+    align-items: center;
+    .new_size_header {
+      text-align: center;
+      line-height: 1.4;
+    }
+    &__item {
+      font-size: 1.2rem;
+      color: #fff;
+      padding: 10px 0;
+    }
+  }
   li {
     margin-right: 0;
   }
   >li+li {
     margin-left: 46px;
-    @media screen and (min-width: 768px) and (max-width: 1439px){
+    @media screen and (min-width: 751px) and (max-width: 1439px){
       margin-left: 10px;
     }
     @media screen and (min-width: 1440px) and (max-width: 1900px){
@@ -284,43 +359,96 @@
 // .mv.j__mv02
 .mv.j__mv02 {
   margin-top: calc(var(--heightHeader) * -1);
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 750px){
     margin-top: 0;
+  }
+  @media screen and (min-width: 751px){
+    position: relative;
+    padding: 0;
+    background: none;
+    height: auto;
   }
 }
 
 // main
 main {
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 750px){
     margin-top: var(--heightHeader);
+  }
+  @media screen and (min-width: 751px){
+    margin-top: 0;
+  }
+}
+
+// Common
+@media screen and (min-width: 751px){
+  .hidden--s {
+    display: none !important;
+  }
+  .visibility--s {
+    display: block !important;
+  }
+  .h__menu__inner.visibility--s {
+    display: flex !important;
+  }
+  .fx-col-50-s {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .fadein {
+    transition: all 1s;
+  }
+  .t__skill__box .fx-row {
+    align-items: center;
+  }
+  .fx-row-30-s {
+    margin-top: -30px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .fx-row-30-s > [class*="fx-col"] {
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .fx-col-33-s {
+    -ms-flex-preferred-size: 33.3333%;
+    flex-basis: 33.3333%;
+    max-width: 33.3333%;
   }
 }
 
 // .p-topRoot
 .p-topRoot {
   position: relative;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 750px){
     padding-top: vw_sp(163);
     padding-bottom: vw_sp(163);
   }
   &__ttl {
-    width: clamp(650 * 750 / 1366 * 1px, 650 / 1366 * 100vw, 650px);
+    width: clamp(0px, vw_pc(720), 720px);
     background-color: #004fff;
     color: #000;
     font-size: clamp(0px, vw_pc(40), 40px);
     font-weight: 700;
     letter-spacing: 0.15em;
+    margin-bottom: clamp(0px, vw_pc(45), 45px);
     span {
       color: #fff;
     }
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
+      width: vw_sp(683);
       font-size: vw_sp(40);
       letter-spacing: 0.1em;
+      margin-bottom: vw_sp(25);
     }
   }
   &__subttl {
     font-weight: 700;
-    @media screen and (max-width: 767px){
+    &--small {
+      letter-spacing: 0.1em;
+    }
+    @media screen and (max-width: 750px){
       line-height: 1.1;
       margin-top: vw_sp(15);
       margin-bottom: vw_sp(120);
@@ -344,7 +472,7 @@ main {
       color: #000;
       font-size: clamp(0px, vw_pc(30), 30px);
       padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 750px){
         line-height: 1.7;
         font-size: vw_sp(32);
         padding: vw_sp(6) vw_sp(40);
@@ -359,21 +487,21 @@ main {
           height: clamp(0px, vw_pc(10), 10px);
           background-color: #fff;
           z-index: -1;
-          @media screen and (max-width: 767px){
+          @media screen and (max-width: 750px){
             height: vw_sp(10);
           }
         }
       }
       &.emphasis {
         padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
-        @media screen and (max-width: 767px){
+        @media screen and (max-width: 750px){
           padding: vw_sp(6) vw_sp(40);
         }
       }
     }
     .swiper-container {
       padding-bottom: clamp(0px, vw_pc(80), 80px);
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 750px){
         padding-bottom: vw_sp(100);
       }
     }
@@ -384,7 +512,7 @@ main {
     padding-top: clamp(0px, vw_pc(8), 8px);
     padding-bottom: clamp(0px, vw_pc(8), 8px);
     z-index: -1;
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
       padding-top: vw_sp(8);
       padding-bottom: vw_sp(8);
     }
@@ -392,7 +520,7 @@ main {
       position: relative;
       width: vw_pc(1130);
       margin: 0 auto;
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 750px){
         width: vw_sp(670);
       }
     }
@@ -400,8 +528,19 @@ main {
     .swiper-button-prev {
       background-color: transparent;
       bottom: vw_pc(-2);
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 750px){
         bottom: vw_sp(-3);
+      }
+    }
+  }
+}
+
+// .t__media__img
+.t__media {
+  @media screen and (max-width: 750px){
+    &__img {
+      img {
+        width: 100%;
       }
     }
   }
@@ -409,12 +548,14 @@ main {
 
 // .t__about
 .t__about {
+  padding-top: clamp(0px, vw_pc(210), 210px);
   padding-bottom: clamp(0px, vw_pc(180), 180px);
+  margin-bottom: clamp(0px, vw_pc(60), 60px);
   background-image: linear-gradient(315deg, #004FFF 0%, #000000 40%, #000000 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 750px){
     background-image: linear-gradient(293deg, #004FFF 0%, #000 39%, #000 100%);
     padding-top: vw_sp(100);
     padding-bottom: vw_sp(120);
@@ -436,14 +577,14 @@ main {
     padding: 0;
     .section__ttl {
       margin: 0 0 clamp(0px, vw_pc(100), 100px) 0;
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 750px){
         margin-left: vw_sp(-42);
       }
     }
     .t_ttl_1 {
       margin: 0;
       color: #004fff;
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 750px){
         font-size: vw_sp(60);
       }
     }
@@ -456,7 +597,7 @@ main {
     .section__ttl {
       margin: 0;
       justify-content: flex-end;
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 750px){
         font-size: vw_sp(28);
       }
     }
@@ -466,6 +607,15 @@ main {
 // .t__effect
 .t__effect {
   position: relative;
+  @media screen and (max-width: 750px) {
+    padding-top: vw_sp(150);
+    h3.effect_ttl_2 {
+      margin-bottom: vw_sp(20);
+    }
+    .slick-dotted.slick-slider {
+      margin-top: 0;
+    }
+  }
   .slider {
     .slick-prev, .slick-next {
       z-index: 2;
@@ -490,7 +640,7 @@ main {
     }
   }
   .effect_ttl_2 {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 751px){
       br.sp_br {
         display: none;
       }
@@ -498,34 +648,69 @@ main {
   }
 }
 
+// .t__skill
+.t__skill {
+  margin-bottom: clamp(0px, vw_pc(60), 60px);
+  @media screen and (max-width: 750px){
+    margin-bottom: vw_sp(80);
+  }
+}
+@media screen and (min-width: 751px){
+  .t__skill__box .fx-col-60-s {
+    flex-basis: 59%;
+    max-width: 59%;
+  }
+  .t__skill__box .fx-col-40-s {
+    flex-basis: 41%;
+    max-width: 41%;
+  }
+  .t__skill__box .btn {
+    margin: 0 auto 0 0;
+  }
+}
+@media screen and (max-width: 751px){
+  .t__skill__box:last-child .fx-col-40-s {
+    order: unset;
+  }
+}
+
 // .t__introduction
 .t__introduction {
   margin-bottom: 0;
+  @media screen and (min-width: 751px){
+    .introduction__comment {
+      display: block;
+      margin-bottom: 0;
+    }
+    .introduction__btn {
+      display: none;
+    }
+  }
 }
 
 // .t__voice
 .t__voice {
   position: relative;
-  padding-top: clamp(0px, vw_pc(150), 150px);
-  padding-bottom: clamp(0px, vw_pc(210), 210px);
+  padding-top: clamp(0px, vw_pc(110), 110px);
+  padding-bottom: clamp(0px, vw_pc(240), 240px);
   margin-bottom: 0;
-  @media screen and (min-width: 768px) and (max-width: 1300px) {
+  @media screen and (min-width: 751px) and (max-width: 1300px) {
     .c-arrow01__tr {
       right: clamp(0px, vw_pc(25), 25px);
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1500px) {
+  @media screen and (min-width: 751px) and (max-width: 1500px) {
     .c-arrow01__bl {
       left: clamp(0px, vw_pc(10), 10px);
     }
   }
-  @media screen and (max-width: 767px) {
-    padding-top: vw_sp(142);
+  @media screen and (max-width: 750px){
+    padding-top: vw_sp(150);
     padding-bottom: vw_sp(120);
     background-image: linear-gradient(275deg, #004FFF 0%, #000000 95%, #000000 100%);
   }
   .c-arrow01__bl {
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       left: 0;
     }
   }
@@ -539,23 +724,23 @@ main {
     margin-right: clamp(0px, vw_pc(20), 20px);
     letter-spacing: 0.2em;
     display: inline-flex;
-    @media screen and (min-width: 768px) and (max-width: 991px){
+    @media screen and (min-width: 751px) and (max-width: 991px){
       margin-left: 0;
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       font-size: vw_sp(62);
       letter-spacing: 0.1em;
       line-height: 1.6;
       margin-left: vw_sp(28);
       margin-right: 0;
-      margin-bottom: 0;
+      margin-bottom: vw_sp(15);
     }
   }
   .section__ttl {
     p {
       font-size: clamp(0px, vw_pc(20), 20px);
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       margin-bottom: vw_sp(80);
       p {
         font-size: vw_sp(27);
@@ -564,9 +749,12 @@ main {
     }
   }
   .content__area {
-    @media screen and (max-width: 767px) {
-      padding-left: vw_sp(38);
-      padding-right: vw_sp(38);
+    @media screen and (max-width: 750px){
+      padding-left: vw_sp(40);
+      padding-right: vw_sp(40);
+    }
+    @media screen and (min-width: 751px) and (max-width: 1023px){
+      padding: 0 calc(32/751*100vw);
     }
   }
   &__list {
@@ -576,9 +764,15 @@ main {
       li {
         margin: 0 !important;
         padding: 0 !important;
+        @media screen and (min-width: 751px){
+          max-width: 49%;
+        }
       }
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 750px){
         gap: vw_sp(40);
+      }
+      @media screen and (min-width: 751px){
+        justify-content: space-between;
       }
     }
   }
@@ -596,16 +790,19 @@ main {
     padding-left: clamp(0px, vw_pc(60), 60px);
     padding-right: clamp(0px, vw_pc(60), 60px);
     min-height: clamp(0px, vw_pc(480), 480px);
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       min-height: auto;
       padding: vw_sp(70);
+    }
+    @media screen and (min-width: 751px){
+      height: 100%;
     }
 
     .sup {
       color: #fff;
       font-size: clamp(0px, vw_pc(20), 20px);
       margin-top: clamp(0px, vw_pc(39), 39px);
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 750px){
         font-size: vw_sp(25);
         margin-top: vw_sp(39);
       }
@@ -627,24 +824,24 @@ main {
       bottom: vw_pc(-9);
       left: vw_pc(-9);
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       width: vw_sp(124);
       height: vw_sp(124);
       &--tr {
-      border-width: vw_sp(11) vw_sp(11) 0 0;
-      top: vw_sp(-9);
-      right: vw_sp(-9);
-    }
-    &--bl {
-      border-width: 0 0 vw_sp(11) vw_sp(11);
-      bottom: vw_sp(-9);
-      left: vw_sp(-9);
-    }
+        border-width: vw_sp(11) vw_sp(11) 0 0;
+        top: vw_sp(-9);
+        right: vw_sp(-9);
+      }
+      &--bl {
+        border-width: 0 0 vw_sp(11) vw_sp(11);
+        bottom: vw_sp(-9);
+        left: vw_sp(-9);
+      }
     }
   }
   .voice__date {
     font-size: clamp(0px, vw_pc(32), 32px);
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       font-size: vw_sp(32);
     }
   }
@@ -656,7 +853,7 @@ main {
       display: block;
       font-size: clamp(0px, vw_pc(22), 22px);
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       font-size: vw_sp(26);
       margin-bottom: vw_sp(30);
       span {
@@ -670,7 +867,7 @@ main {
     background: none;
     padding: 0;
     margin-bottom: clamp(0px, vw_pc(10), 10px);
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       font-size: vw_sp(34);
       margin-bottom: vw_sp(10);
     }
@@ -680,7 +877,7 @@ main {
   }
   .voice__text {
     font-size: clamp(0px, vw_pc(20), 20px);
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 750px){
       font-size: vw_sp(25);
     }
   }
@@ -688,6 +885,38 @@ main {
 
 // .footer
 .footer {
+  @media screen and (min-width: 751px){
+    padding-top: 60px;
+    position: relative;
+    &__inner {
+      display: block;
+      margin-bottom: 60px;
+    }
+    &__logo_txt{
+      color: #fff;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    &__logo{
+      max-width: 215px;
+      margin: 0 auto 40px;
+    }
+    &__nav>ul{
+      display: flex;
+      justify-content: center;
+    }
+    &__nav>ul+ul{
+      margin-top: 20px;
+    }
+    &__nav>ul>li+li{
+      margin-left: 20px;
+    }
+    &__nav__item {
+      color: #fff;
+      font-size: 1.3rem;
+    }
+  }
   small {
     border: none;
     color: #fff;
