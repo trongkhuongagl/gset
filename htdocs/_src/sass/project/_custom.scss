@@ -5,22 +5,27 @@
   --btn-bg-01: #ffe100;
   --btn-txt-01: #081f62;
 }
+
 // Common
 @function vw_pc($px, $base: 1904) {
   @return ($px / $base) * 100vw;
 }
+
 @function vw_sp($px, $base: 750) {
   @return ($px / $base) * 100vw;
 }
+
 .c-bg-linear01 {
   background-image: linear-gradient(315deg, #004FFF 0%, #000000 35%, #000000 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
   @include mobile() {
     background-image: linear-gradient(286deg, #004FFF 0%, #000 36%, #000 100%);
   }
 }
+
 .c-arrow01 {
   &__item {
     width: clamp(0px, vw_pc(200), 200px);
@@ -30,45 +35,54 @@
     position: absolute;
     box-sizing: border-box;
     z-index: 2;
+
     @include mobile() {
       width: vw_sp(120);
       height: vw_sp(120);
     }
   }
+
   &__img {
     width: clamp(0px, vw_pc(25), 25px);
     position: absolute;
     top: calc(100% + #{vw_pc(30)});
     right: vw_pc(-25);
-    @media screen and (min-width: 2560px){
+
+    @media screen and (min-width: 2560px) {
       right: -25px;
       top: calc(100% + 30px);
     }
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     @include mobile() {
       width: vw_sp(15);
       top: calc(100% + #{vw_sp(15)});
       right: vw_sp(-15);
     }
   }
+
   &__tr {
     border-width: clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px) 0 0;
     top: clamp(0px, vw_pc(50), 50px);
     right: clamp(0px, vw_pc(50), 50px);
+
     @include mobile() {
       border-width: vw_sp(15) vw_sp(15) 0 0;
       top: vw_sp(40);
       right: vw_sp(10);
     }
   }
+
   &__bl {
     border-width: 0 0 clamp(0px, vw_pc(25), 25px) clamp(0px, vw_pc(25), 25px);
     bottom: vw_sp(40);
     left: clamp(0px, vw_pc(110), 110px);
+
     @include mobile() {
       border-width: 0 0 vw_sp(15) vw_sp(15);
       bottom: vw_sp(40);
@@ -77,9 +91,18 @@
   }
 }
 
+.sp {
+  display: none;
+
+  @include mobile() {
+    display: block;
+  }
+}
+
 // .header
 .header {
   z-index: 3;
+
   @include mobile() {
     height: vw_sp(130);
     background-color: #000;
@@ -88,35 +111,44 @@
     left: 0;
     width: 100%;
   }
+
   @include pc() {
     position: relative;
     background-color: transparent;
   }
+
   &__top {
     .h__logo {
       width: auto;
       position: static;
       padding: 0;
       margin-top: 30px;
+
       img {
         max-width: none;
         min-width: auto;
         width: 158px;
       }
-      @media screen and (min-width: 751px) and (max-width: 1439px){
+
+      @media screen and (min-width: 751px) and (max-width: 1439px) {
         margin-top: 0;
+
         img {
           width: 55px;
         }
       }
-      @media screen and (min-width: 1440px) and (max-width: 1900px){
+
+      @media screen and (min-width: 1440px) and (max-width: 1900px) {
         margin-top: 0;
+
         img {
           width: 92px;
         }
       }
+
       @include mobile() {
         margin-top: 0;
+
         img {
           width: vw_sp(125);
         }
@@ -129,11 +161,13 @@
 .fixed {
   &__header {
     max-width: 1780px;
+
     @media screen and (min-width: 751px) and (max-width: 1399px) {
       .h__logo {
         width: 10vw;
       }
     }
+
     @include pc() {
       display: block !important;
       position: fixed;
@@ -154,10 +188,12 @@
       -o-transition: opacity .4s;
       transition: opacity .4s;
       border-radius: 5px;
+
       &.fixed__header__active {
         opacity: 1;
         pointer-events: all;
       }
+
       .h__inner {
         background: #fff;
         padding: 10px;
@@ -167,17 +203,21 @@
         justify-content: space-between;
         border-radius: 5px;
       }
+
       .h__gnav__item {
         color: #0c0c0c;
       }
+
       .h__menu__inner {
         display: flex;
       }
+
       // .btn__3 {
       //   display: none;
       // }
     }
   }
+
   &__footer {
     .btn__2 {
       background-color: var(--btn-bg-01);
@@ -194,14 +234,17 @@
   padding-left: 33px;
   background: transparent;
   justify-content: space-between;
-  @media screen and (min-width: 751px) and (max-width: 1439px){
+
+  @media screen and (min-width: 751px) and (max-width: 1439px) {
     padding-right: 15px;
     padding-left: 15px;
   }
-  @media screen and (min-width: 1440px) and (max-width: 1900px){
+
+  @media screen and (min-width: 1440px) and (max-width: 1900px) {
     padding-right: 15px;
     padding-left: 15px;
   }
+
   @include mobile() {
     height: 100%;
     padding-right: vw_sp(40);
@@ -213,10 +256,12 @@
 .h__btn {
   margin-left: 52px;
   align-items: center;
-  @media screen and (min-width: 751px) and (max-width: 1439px){
+
+  @media screen and (min-width: 751px) and (max-width: 1439px) {
     margin-left: 10px;
   }
-  @media screen and (min-width: 1440px) and (max-width: 1900px){
+
+  @media screen and (min-width: 1440px) and (max-width: 1900px) {
     margin-left: 30px;
   }
 }
@@ -225,62 +270,78 @@
 .h__menu {
   &__inner {
     padding: 20px 0;
-    @media screen and (min-width: 751px) and (max-width: 1439px){
+
+    @media screen and (min-width: 751px) and (max-width: 1439px) {
       padding: 10px 0;
     }
-    @media screen and (min-width: 1440px) and (max-width: 1900px){}
+
+    @media screen and (min-width: 1440px) and (max-width: 1900px) {}
+
     .btn {
       min-width: 284px;
       height: 62px;
       font-weight: 700;
       line-height: 1.5;
       border-radius: 0;
+
       @include pc() {
         font-size: 1.2rem;
       }
-      @media screen and (min-width: 751px) and (max-width: 1199px){
+
+      @media screen and (min-width: 751px) and (max-width: 1199px) {
         min-width: 135px;
         height: 40px;
       }
-      @media screen and (min-width: 1200px) and (max-width: 1439px){
+
+      @media screen and (min-width: 1200px) and (max-width: 1439px) {
         min-width: 190px;
         height: 45px;
         font-size: 1.3rem;
         flex-direction: column;
+
         span {
           display: block;
         }
       }
-      @media screen and (min-width: 1440px) and (max-width: 1900px){
+
+      @media screen and (min-width: 1440px) and (max-width: 1900px) {
         min-width: 200px;
         height: 45px;
         font-size: 1.3rem;
       }
+
       &::before {
         display: none;
       }
+
       &+.btn {
         margin-left: 15px;
-        @media screen and (min-width: 751px) and (max-width: 1439px){
+
+        @media screen and (min-width: 751px) and (max-width: 1439px) {
           margin-left: 10px;
         }
-        @media screen and (min-width: 1440px) and (max-width: 1900px){
-        }
+
+        @media screen and (min-width: 1440px) and (max-width: 1900px) {}
       }
+
       &__1 {
         border-width: 3px;
+
         @include pc() {
           display: none;
         }
       }
+
       &__2 {
         background-color: var(--btn-bg-01);
         color: var(--btn-txt-01);
+
         span {
           @include pc() {
             display: none;
           }
-          @media screen and (min-width: 1200px){
+
+          @media screen and (min-width: 1200px) {
             display: block;
           }
         }
@@ -294,25 +355,31 @@
   @include pc() {
     display: flex;
     align-items: center;
+
     .new_size_header {
       text-align: center;
       line-height: 1.4;
     }
+
     &__item {
       font-size: 1.2rem;
       color: #fff;
       padding: 10px 0;
     }
   }
+
   li {
     margin-right: 0;
   }
+
   >li+li {
     margin-left: 46px;
-    @media screen and (min-width: 751px) and (max-width: 1439px){
+
+    @media screen and (min-width: 751px) and (max-width: 1439px) {
       margin-left: 10px;
     }
-    @media screen and (min-width: 1440px) and (max-width: 1900px){
+
+    @media screen and (min-width: 1440px) and (max-width: 1900px) {
       margin-left: 30px;
     }
   }
@@ -342,28 +409,35 @@
     height: vw_sp(130);
     background: #000;
   }
+
   &__inner {
     width: vw_sp(48);
     height: vw_sp(42);
   }
+
   &__nav__item {
     border-color: #fff;
   }
+
   &__icon {
     height: vw_sp(2);
+
     &:nth-child(2) {
       width: vw_sp(24);
       top: vw_sp(20);
     }
+
     &:last-child {
       width: vw_sp(36);
     }
   }
+
   &__active {
     .hamburger__icon:first-child {
       width: vw_sp(48);
       left: vw_sp(-4);
     }
+
     .hamburger__icon:last-child {
       width: vw_sp(48);
       left: vw_sp(-4);
@@ -375,9 +449,11 @@
 // .mv.j__mv02
 .mv.j__mv02 {
   margin-top: calc(var(--heightHeader) * -1);
+
   @include mobile() {
     margin-top: 0;
   }
+
   @include pc() {
     position: relative;
     padding: 0;
@@ -391,6 +467,7 @@ main {
   @include mobile() {
     margin-top: var(--heightHeader);
   }
+
   @include pc() {
     margin-top: 0;
   }
@@ -401,32 +478,40 @@ main {
   .hidden--s {
     display: none !important;
   }
+
   .visibility--s {
     display: block !important;
   }
+
   .h__menu__inner.visibility--s {
     display: flex !important;
   }
+
   .fx-col-50-s {
     flex-basis: 50%;
     max-width: 50%;
   }
+
   .fadein {
     transition: all 1s;
   }
+
   .t__skill__box .fx-row {
     align-items: center;
   }
+
   .fx-row-30-s {
     margin-top: -30px;
     margin-left: -15px;
     margin-right: -15px;
   }
-  .fx-row-30-s > [class*="fx-col"] {
+
+  .fx-row-30-s>[class*="fx-col"] {
     margin-top: 30px;
     padding-left: 15px;
     padding-right: 15px;
   }
+
   .fx-col-33-s {
     -ms-flex-preferred-size: 33.3333%;
     flex-basis: 33.3333%;
@@ -437,10 +522,12 @@ main {
 // .p-topRoot
 .p-topRoot {
   position: relative;
+
   @include mobile() {
     padding-top: vw_sp(163);
     padding-bottom: vw_sp(163);
   }
+
   &__ttl {
     width: clamp(0px, vw_pc(720), 720px);
     background-color: #004fff;
@@ -449,9 +536,11 @@ main {
     font-weight: 700;
     letter-spacing: 0.15em;
     margin-bottom: clamp(0px, vw_pc(45), 45px);
+
     span {
       color: #fff;
     }
+
     @include mobile() {
       width: vw_sp(683);
       font-size: vw_sp(40);
@@ -459,42 +548,53 @@ main {
       margin-bottom: vw_sp(25);
     }
   }
+
   &__subttl {
     font-weight: 700;
+
     &--small {
       letter-spacing: 0.1em;
     }
+
     @include mobile() {
       line-height: 1.1;
       margin-top: vw_sp(15);
       margin-bottom: vw_sp(120);
+
       &--small {
         font-size: vw_sp(50);
       }
     }
   }
+
   &__tabList {
     background-color: transparent;
   }
+
   &__tabItem {
     letter-spacing: 0.1em;
+
     &.active {
       color: #000;
     }
   }
+
   &__slider {
     .swiper-slide-txt-item {
       background-color: #004fff;
       color: #000;
       font-size: clamp(0px, vw_pc(30), 30px);
       padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
+
       @include mobile() {
         line-height: 1.7;
         font-size: vw_sp(32);
         padding: vw_sp(6) vw_sp(40);
       }
+
       span {
         margin-left: -1px;
+
         &:before {
           content: "";
           top: unset;
@@ -503,47 +603,58 @@ main {
           height: clamp(0px, vw_pc(10), 10px);
           background-color: #fff;
           z-index: -1;
+
           @include mobile() {
             height: vw_sp(10);
           }
         }
       }
+
       &.emphasis {
         padding: clamp(0px, vw_pc(5), 5px) clamp(0px, vw_pc(40), 40px);
+
         @include mobile() {
           padding: vw_sp(6) vw_sp(40);
         }
       }
     }
+
     .swiper-container {
       padding-bottom: clamp(0px, vw_pc(80), 80px);
+
       @include mobile() {
         padding-bottom: vw_sp(100);
       }
     }
   }
+
   &__sliderNav {
     width: 100%;
     background-color: #061e61;
     padding-top: clamp(0px, vw_pc(8), 8px);
     padding-bottom: clamp(0px, vw_pc(8), 8px);
     z-index: -1;
+
     @include mobile() {
       padding-top: vw_sp(8);
       padding-bottom: vw_sp(8);
     }
+
     &-wrap {
       position: relative;
       width: vw_pc(1130);
       margin: 0 auto;
+
       @include mobile() {
         width: vw_sp(670);
       }
     }
+
     .swiper-button-next,
     .swiper-button-prev {
       background-color: transparent;
       bottom: vw_pc(-2);
+
       @include mobile() {
         bottom: vw_sp(-3);
       }
@@ -560,8 +671,10 @@ main {
       }
     }
   }
+
   @include mobile() {
     margin-top: vw_sp(115);
+
     &__img {
       img {
         width: 100%;
@@ -579,48 +692,60 @@ main {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
   @include mobile() {
     background-image: linear-gradient(293deg, #004FFF 0%, #000 39%, #000 100%);
     padding-top: vw_sp(100);
     padding-bottom: vw_sp(120);
     margin-bottom: 0;
   }
+
   &::before {
     display: none;
   }
+
   &__img {
     margin-right: clamp(0px, vw_pc(120), 120px);
+
     .visibility--s {
       width: 100%;
     }
   }
+
   .content__area--title {
     max-width: none;
     width: clamp(0px, vw_pc(1390), 1390px);
     margin: 0 auto;
     padding: 0;
+
     .section__ttl {
       margin: 0 0 clamp(0px, vw_pc(100), 100px) 0;
+
       @include mobile() {
         margin-left: vw_sp(-42);
       }
     }
+
     .t_ttl_1 {
       margin: 0;
       color: #004fff;
+
       @include mobile() {
         font-size: vw_sp(60);
       }
     }
   }
+
   .content__area--desc {
     max-width: none;
     width: clamp(0px, vw_pc(1440), 1440px);
     margin: clamp(0px, vw_pc(85), 85px) auto 0 auto;
     padding: 0 clamp(0px, vw_pc(30), 30px) 0 0;
+
     .section__ttl {
       margin: 0;
       justify-content: flex-end;
+
       @include mobile() {
         font-size: vw_sp(28);
       }
@@ -634,44 +759,55 @@ main {
     &__wrap {
       padding-bottom: vw_sp(155);
     }
-  }  
+  }
 }
 
 // .t__effect
 .t__effect {
   position: relative;
+
   @media screen and (max-width: 750px) {
     padding-top: vw_sp(150);
+
     h3.effect_ttl_2 {
       margin-bottom: vw_sp(20);
     }
+
     .slick-dotted.slick-slider {
       margin-top: 0;
     }
   }
+
   .slider {
-    .slick-prev, .slick-next {
+
+    .slick-prev,
+    .slick-next {
       z-index: 2;
     }
   }
+
   @media screen and (max-width: 500px) {
     .slider {
       .p-audio {
         padding: vw_sp(30);
       }
+
       .p-audio__image {
         height: 14rem;
         min-width: 11rem;
         width: 11rem;
+
         img {
           width: 100%;
         }
       }
+
       .p-audio__item {
         padding: vw_sp(30) vw_sp(30) 0 vw_sp(70);
       }
     }
   }
+
   .effect_ttl_2 {
     @include pc() {
       br.sp_br {
@@ -681,32 +817,207 @@ main {
   }
 }
 
+.t__reason {
+  position: relative;
+  padding: vw_pc(100) 0 clamp(60px, vw_pc(80), 80px);
+
+  @include mobile() {
+    padding: vw_sp(100) 0;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+
+  h2.t_ttl_2 {
+    position: relative;
+    color: #004fff;
+    line-height: 1.6;
+    text-align: center;
+    font-size: clamp(30px, vw_pc(60), 60px);
+    font-weight: 700;
+    margin-top: 0;
+
+    @include mobile() {
+      font-size: vw_sp(60);
+    }
+  }
+
+  h3.effect_ttl_2 {
+    font-size: clamp(22px, vw_pc(30), 30px);
+    line-height: 1.7;
+    margin-top: vw_pc(50);
+    margin-bottom: vw_pc(60);
+
+    @include mobile() {
+      font-size: vw_sp(36);
+      margin-top: vw_sp(30);
+    }
+  }
+
+  &.content {
+    margin-bottom: -2px;
+  }
+
+  &__txt {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: vw_pc(60);
+    position: relative;
+    line-height: 1.6;
+    z-index: 3;
+
+    @include mobile() {
+      font-size: vw_sp(32);
+      line-height: 1.5;
+    }
+  }
+
+  .content__area {
+    @include mobile () {
+      padding: 0;
+    }
+
+    @media screen and (min-width: 751px) and (max-width: 1024px) {
+      padding: 0 0 0 28px;
+    }
+  }
+
+  &__table {
+    position: relative;
+    margin: vw_pc(80) clamp(0px, vw_pc(60), 60px) vw_pc(50) clamp(0px, vw_pc(60), 60px);
+
+    @include mobile () {
+      margin: vw_sp(60) 0 vw_sp(80);
+      padding: vw_sp(50) 0;
+    }
+
+    .t__reason__txt {
+      margin-bottom: 0;
+    }
+  }
+
+  &__frame {
+    position: relative;
+    z-index: 3;
+    margin-top: -15%;
+
+    &--start {
+      margin-top: -12%;
+
+      @include mobile() {
+        width: 90%;
+        margin: 10% vw_sp(30) 0 3%;
+      }
+    }
+
+    &.frame_01 {
+      position: absolute;
+      top: 12%;
+      right: 0;
+      width: clamp(100px, vw_pc(120), 120px);
+
+      @include mobile() {
+        width: vw_sp(120);
+        top: 10%;
+        right: 1%;
+      }
+
+      &--end {
+        top: auto;
+        bottom: -2%;
+        left: 0;
+
+        @include mobile() {
+          bottom: -12%;
+          left: 1%;
+        }
+      }
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    content: "";
+    top: -9%;
+    left: -7%;
+    width: 35.6%;
+    aspect-ratio: 193 / 150;
+    z-index: -1;
+
+    @include mobile() {
+      left: 0;
+      top: 10%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &--bottom {
+      width: 50%;
+      aspect-ratio: 227/150;
+      top: auto;
+      left: auto;
+      bottom: -3%;
+      right: -6%;
+
+      @include mobile() {
+        right: 0;
+        bottom: -10%;
+      }
+    }
+  }
+}
+
 // .t__skill
 .t__skill {
   margin-bottom: clamp(0px, vw_pc(60), 60px);
+
   @include mobile() {
     margin-bottom: vw_sp(80);
   }
 }
+
 @include pc() {
   .t__skill__box .fx-col-60-s {
     flex-basis: 59%;
     max-width: 59%;
   }
-  .t__skill__box .fx-col-40-s {
-    flex-basis: 41%;
-    max-width: 41%;
+
+  .t__skill__box {
+    .fx-col-40-s {
+      flex-basis: 41%;
+      max-width: 41%;
+    }
+
+    &:last-child .fx-col-40-s {
+      order: unset;
+    }
   }
+
   .t__skill__box .btn {
     margin: 0 auto 0 0;
   }
 }
-@media screen and (max-width: 751px){
+
+@media screen and (max-width: 750px) {
   .t__skill__box:last-child {
     margin-top: vw_sp(60);
+
     ul {
       flex-direction: column-reverse;
     }
+
     .fx-col-40-s {
       order: unset;
     }
@@ -716,11 +1027,13 @@ main {
 // .t__introduction
 .t__introduction {
   margin-bottom: 0;
+
   @include pc() {
     .introduction__comment {
       display: block;
       margin-bottom: 0;
     }
+
     .introduction__btn {
       display: none;
     }
@@ -733,39 +1046,47 @@ main {
   padding-top: clamp(0px, vw_pc(110), 110px);
   padding-bottom: clamp(0px, vw_pc(240), 240px);
   margin-bottom: 0;
+
   @media screen and (min-width: 751px) and (max-width: 1300px) {
     .c-arrow01__tr {
       right: clamp(0px, vw_pc(25), 25px);
     }
   }
+
   @media screen and (min-width: 751px) and (max-width: 1500px) {
     .c-arrow01__bl {
       left: clamp(0px, vw_pc(10), 10px);
     }
   }
+
   @include mobile() {
     padding-top: vw_sp(150);
     padding-bottom: vw_sp(120);
     background-image: linear-gradient(275deg, #004FFF 0%, #000000 95%, #000000 100%);
   }
+
   .c-arrow01__bl {
     @include mobile() {
       left: 0;
     }
   }
+
   .section__ttl,
   .t_ttl_1 {
     color: #fff;
   }
+
   .t_ttl_1 {
     font-size: clamp(0px, vw_pc(60), 60px);
     margin-left: clamp(0px, vw_pc(55), 55px);
     margin-right: clamp(0px, vw_pc(20), 20px);
     letter-spacing: 0.2em;
     display: inline-flex;
-    @media screen and (min-width: 751px) and (max-width: 991px){
+
+    @media screen and (min-width: 751px) and (max-width: 991px) {
       margin-left: 0;
     }
+
     @include mobile() {
       font-size: vw_sp(62);
       letter-spacing: 0.1em;
@@ -775,51 +1096,64 @@ main {
       margin-bottom: vw_sp(15);
     }
   }
+
   .section__ttl {
     p {
       font-size: clamp(0px, vw_pc(20), 20px);
     }
+
     @include mobile() {
       margin-bottom: vw_sp(80);
+
       p {
         font-size: vw_sp(27);
         margin-left: vw_sp(36);
       }
     }
   }
+
   .content__area {
     @include mobile() {
       padding-left: vw_sp(40);
       padding-right: vw_sp(40);
     }
-    @media screen and (min-width: 751px) and (max-width: 1023px){
+
+    @media screen and (min-width: 751px) and (max-width: 1023px) {
       padding: 0 calc(32/751*100vw);
     }
   }
+
   &__list {
     ul {
       margin: 0;
       gap: clamp(0px, vw_pc(65), 65px) clamp(0px, vw_pc(60), 60px);
+
       li {
         margin: 0 !important;
         padding: 0 !important;
+
         @include pc() {
           max-width: 49%;
         }
       }
+
       @include mobile() {
         gap: vw_sp(40);
       }
+
       @include pc() {
         justify-content: space-between;
       }
     }
   }
+
   .voice__box {
+
     &::before,
     &::after {
       display: none;
     }
+
     border: none;
     background-image: linear-gradient(315deg, #004FFF 0%, #000000 70%, #000000 100%);
     background-repeat: no-repeat;
@@ -829,10 +1163,12 @@ main {
     padding-left: clamp(0px, vw_pc(60), 60px);
     padding-right: clamp(0px, vw_pc(60), 60px);
     min-height: clamp(0px, vw_pc(480), 480px);
+
     @include mobile() {
       min-height: auto;
       padding: vw_sp(70);
     }
+
     @include pc() {
       height: 100%;
     }
@@ -841,36 +1177,43 @@ main {
       color: #fff;
       font-size: clamp(0px, vw_pc(20), 20px);
       margin-top: clamp(0px, vw_pc(39), 39px);
+
       @include mobile() {
         font-size: vw_sp(25);
         margin-top: vw_sp(39);
       }
     }
   }
+
   .voice__arrow {
     width: clamp(0px, vw_pc(124), 124px);
     height: clamp(0px, vw_pc(124), 124px);
     border-style: solid;
     border-color: #004fff;
     position: absolute;
+
     &--tr {
       border-width: clamp(0px, vw_pc(11), 11px) clamp(0px, vw_pc(11), 11px) 0 0;
       top: vw_pc(-9);
       right: vw_pc(-9);
     }
+
     &--bl {
       border-width: 0 0 clamp(0px, vw_pc(11), 11px) clamp(0px, vw_pc(11), 11px);
       bottom: vw_pc(-9);
       left: vw_pc(-9);
     }
+
     @include mobile() {
       width: vw_sp(124);
       height: vw_sp(124);
+
       &--tr {
         border-width: vw_sp(11) vw_sp(11) 0 0;
         top: vw_sp(-9);
         right: vw_sp(-9);
       }
+
       &--bl {
         border-width: 0 0 vw_sp(11) vw_sp(11);
         bottom: vw_sp(-9);
@@ -878,44 +1221,55 @@ main {
       }
     }
   }
+
   .voice__date {
     font-size: clamp(0px, vw_pc(32), 32px);
+
     @include mobile() {
       font-size: vw_sp(32);
     }
   }
+
   .voice__name {
     font-size: clamp(0px, vw_pc(22), 22px);
     line-height: 1.6;
     margin-bottom: clamp(0px, vw_pc(30), 30px);
+
     span {
       display: block;
       font-size: clamp(0px, vw_pc(22), 22px);
     }
+
     @include mobile() {
       font-size: vw_sp(26);
       margin-bottom: vw_sp(30);
+
       span {
         font-size: vw_sp(26);
       }
     }
   }
+
   .voice__comment {
     font-size: clamp(0px, vw_pc(27), 27px);
     position: static;
     background: none;
     padding: 0;
     margin-bottom: clamp(0px, vw_pc(10), 10px);
+
     @include mobile() {
       font-size: vw_sp(34);
       margin-bottom: vw_sp(10);
     }
+
     &::after {
       display: none;
     }
   }
+
   .voice__text {
     font-size: clamp(0px, vw_pc(20), 20px);
+
     @include mobile() {
       font-size: vw_sp(25);
     }
@@ -927,94 +1281,128 @@ main {
   @include pc() {
     padding-top: 60px;
     position: relative;
+
     &__inner {
       display: block;
       margin-bottom: 60px;
     }
-    &__logo_txt{
+
+    &__logo_txt {
       color: #fff;
       font-size: 1.8rem;
       text-align: center;
       margin-bottom: 8px;
     }
-    &__logo{
+
+    &__logo {
       max-width: 215px;
       margin: 0 auto 40px;
     }
-    &__nav>ul{
+
+    &__nav>ul {
       display: flex;
       justify-content: center;
     }
-    &__nav>ul+ul{
+
+    &__nav>ul+ul {
       margin-top: 20px;
     }
-    &__nav>ul>li+li{
+
+    &__nav>ul>li+li {
       margin-left: 20px;
     }
+
     &__nav__item {
       color: #fff;
       font-size: 1.3rem;
     }
   }
+
   small {
     border: none;
     color: #fff;
   }
 }
+
 .t_ttl_1 {
   @extend %text-sp-t01;
 }
+
 .t_ttl_2 {
   @extend %text-sp-t02;
 }
+
 .p-topAudio {
   .p-topAudio__txt {
     @extend %text-sp;
   }
 }
+
 .t__media {
-  p.ttl__animated, .t__media__box > p {
+
+  p.ttl__animated,
+  .t__media__box>p {
     @extend %text-sp;
   }
 }
+
 .t__skill {
   .t__skill__txt {
     @extend %text-sp;
   }
 }
+
 .t__effect {
   h2.effect_ttl {
     @extend %text-sp-t02;
   }
+
   h3.effect_ttl_2 {
     @include mobile() {
       font-size: vw_sp(32);
     }
   }
 }
+
 .t__faq {
   p.ttl__animated {
     @extend %text-sp;
   }
+
   .faq__txt {
     @include mobile() {
       padding-left: $spvw * 80;
     }
-    + .faq__txt {
+
+    +.faq__txt {
       @include mobile() {
         margin-top: $spvw * 20;
       }
     }
+
     &.faq_q {
       @extend %text-sp;
+
       @include mobile() {
         padding-right: $spvw * 40;
         min-height: $spvw * 60;
       }
+
+      .plus {
+        @include pc {
+          display: none;
+        }
+      }
     }
+
     &.faq_a {
       @extend %text-sp;
+
+      @include pc () {
+        display: block;
+      }
     }
+
     span {
       @include mobile() {
         margin-right: $spvw * 20;
@@ -1023,11 +1411,13 @@ main {
         max-width: $spvw * 60;
       }
     }
+
     .plus {
       @include mobile() {
         width: $spvw * 30;
         height: $spvw * 30;
       }
+
       &::before {
         @include mobile() {
           width: $spvw * 30;
@@ -1035,6 +1425,7 @@ main {
           top: $spvw * 14;
         }
       }
+
       &::after {
         @include mobile() {
           width: $spvw * 2;
@@ -1045,16 +1436,19 @@ main {
     }
   }
 }
+
 .t__introduction {
   p.ttl__animated {
     @extend %text-sp;
   }
+
   .introduction {
     &__birthplace {
       @include mobile() {
         font-size: vw_sp(28);
       }
     }
+
     &__img {
       img {
         @include mobile() {
@@ -1062,8 +1456,10 @@ main {
         }
       }
     }
+
     &__name {
       @extend %text-sp;
+
       span {
         @include mobile() {
           font-size: vw_sp(48);
@@ -1072,24 +1468,29 @@ main {
     }
   }
 }
+
 .response__content {
   .response__ttl {
-    @extend %text-sp-t02;    
+    @extend %text-sp-t02;
   }
+
   p {
     @extend %text-sp;
   }
 }
+
 %text-sp-t01 {
   @include mobile() {
     font-size: vw_sp(60);
   }
 }
+
 %text-sp-t02 {
   @include mobile() {
     font-size: vw_sp(52);
   }
 }
+
 %text-sp {
   @include mobile() {
     // font-size: vw_sp(32);
